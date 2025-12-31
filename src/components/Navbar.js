@@ -10,14 +10,16 @@ const Navbar = ({ setActiveSection, activeSection }) => {
   const handleNavClick = (section) => {
     setActiveSection(section);
     setIsMenuOpen(false);
+    // Scroll to top when changing sections
+    window.scrollTo(0, 0);
   };
 
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <a href="#home" className="logo" onClick={() => handleNavClick('home')}>
+        <div className="logo" onClick={() => handleNavClick('home')} style={{ cursor: 'pointer' }}>
           StudentPortfolio
-        </a>
+        </div>
         
         <div 
           className={`hamburger ${isMenuOpen ? 'active' : ''}`}
@@ -30,31 +32,31 @@ const Navbar = ({ setActiveSection, activeSection }) => {
 
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <li>
-            <a 
-              href="#home" 
+            <div 
               className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}
               onClick={() => handleNavClick('home')}
+              style={{ cursor: 'pointer' }}
             >
               Home
-            </a>
+            </div>
           </li>
           <li>
-            <a 
-              href="#skills" 
+            <div 
               className={`nav-link ${activeSection === 'skills' ? 'active' : ''}`}
               onClick={() => handleNavClick('skills')}
+              style={{ cursor: 'pointer' }}
             >
               Skills
-            </a>
+            </div>
           </li>
           <li>
-            <a 
-              href="#contact" 
+            <div 
               className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}
               onClick={() => handleNavClick('contact')}
+              style={{ cursor: 'pointer' }}
             >
               Contact
-            </a>
+            </div>
           </li>
         </ul>
       </div>

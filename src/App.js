@@ -24,9 +24,7 @@ function App() {
   return (
     <div className="App">
       <Navbar setActiveSection={setActiveSection} activeSection={activeSection} />
-      <main className="main-content">
-        {renderSection()}
-      </main>
+      {renderSection()}
       <footer className="footer">
         <p>© {new Date().getFullYear()} Student Portfolio. All rights reserved.</p>
       </footer>
